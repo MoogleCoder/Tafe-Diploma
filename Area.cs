@@ -19,6 +19,5 @@ namespace Prototype.Data
         public Restaurant Restaurant { get; set; }
         [Required]
         public int RestaurantId { get; set; }//FK
-
     }
 }
