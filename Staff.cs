@@ -1,8 +1,8 @@
 ﻿namespace BeanSeans.Data
 {
-    public class Member:Person
+    public class Staff: Person
     {
-        public override bool IsMember
+        public override bool IsStaff
 
         {
             get { return true; }

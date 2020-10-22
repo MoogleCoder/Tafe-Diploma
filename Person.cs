@@ -1,43 +1,43 @@
 ﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
-namespace Prototype.Data
+namespace BeanSeans.Data
 {
     public class Person
     {
         public int Id { get; set; }
-        [Required]
-        public string UserId { get; set; }
 
-        [Required]
         public string FirstName { get; set; }
 
-        [Required]
         public string LastName { get; set; }
 
-    
-        [Required]
         public string Email { get; set; }
-        [Required]
-        public string phoneNumber { get; set; }
+
+        public string Phone { get; set; }
+
+        //nullable-AspUser
+        public string UserId { get; set; }//Guest
 
         public virtual bool IsMember
+
         {
-            get
-            {
-                return false;
-            }
+            get { return false; }
         }
 
-        public virtual bool IsEmployee
+        public virtual bool IsStaff
+
         {
-            get
-            {
-                return false;
-            }
+            get { return false; }
         }
+
+        //1 relationship
+        public Restuarant Restaurant { get; set; }
+        //FK
+        public int RestuarantId { get; set; }
 
 
         public List<Reservation> Reservations { get; set; } = new List<Reservation>();
+
+   
     }
+
 }

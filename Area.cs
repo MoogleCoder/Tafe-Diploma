@@ -1,23 +1,22 @@
 ﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
-namespace Prototype.Data
+namespace BeanSeans.Data
 {
     public class Area
     {
+        //1 relationship
+        public Restuarant Restuarant { get; set; }
+        public int RestuarantId { get; set; }
+        //m relationship
+        public List<Table> Tables { get; set; }
+
         public Area()
         {
             Tables = new List<Table>();
         }
-        [Required]
+        //prop
         public int Id { get; set; }
-        [Required]
-        public string Name { get; set; }//main
-        [Required]
-        public List<Table> Tables { get; set; }
-        [Required]
-        public Restaurant Restaurant { get; set; }
-        [Required]
-        public int RestaurantId { get; set; }//FK
+
+        public string Name { get; set; }
     }
 }

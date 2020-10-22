@@ -1,19 +1,18 @@
 ﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
-namespace Prototype.Data
+namespace BeanSeans.Data
 {
     public class ReservationSource
-    {//phone, email, in person, online or mobile
-        [Required]
-        public string reservationSource { get; set; }
-        [Required]
+    {
+        public int Id { get; set; }
+
+        public string Name { get; set; }
+
         public List<Reservation> Reservations { get; set; }
 
         public ReservationSource()
         {
             Reservations = new List<Reservation>();
         }
-
     }
-    }
+}

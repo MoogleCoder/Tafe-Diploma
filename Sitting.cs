@@ -1,34 +1,39 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
-namespace Prototype.Data
+namespace BeanSeans.Data
 {
     public class Sitting
     {
-        public Sitting()//Sitting for BK, Lunch, Dinner
-        {
+        //1-relationship
+        public SittingType SittingType { get; set; }
+        //FK
+        public int SittingTypeId { get; set; }
+
+        //1-relationship
+        public Restuarant Restuarant { get; set; }
+        //FK
+        public int RestuarantId { get; set; }
+
+        //m-relationship
+        public List<Reservation> Reservations { get; set; }
+
+        public Sitting()
+        {//instanciate
             Reservations = new List<Reservation>();
         }
-        [Required]
+
+        //Prop
         public int Id { get; set; }
-        [Required]
+
         public DateTime Start { get; set; }
-        [Required]
+
         public DateTime End { get; set; }
-     
-        [Required]
+
         public int Capacity { get; set; }
-        [Required]
 
-        public int RestaurantId { get; set; }
-        [Required]
-        public Restaurant Restaurant { get; set; }//1 to many
 
-        public List<Reservation> Reservations { get; set; }//FK
-        [Required]
-        public int SittingTypeId { get; set; }
-        [Required]
-        public SittingType SittingType { get; set; }
+
+
     }
 }
